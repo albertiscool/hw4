@@ -26,7 +26,7 @@ graph TD
     Harness -->|Context + Prompt| LLM[LLM System Controller]
     LLM -->|Function Call 請求| Harness
     
-    subgraph 工具與記憶 (Tools & Memory)
+    subgraph ToolsAndMemory [工具與記憶 Tools and Memory]
         Harness -->|呼叫 API| T1[Profile API]
         Harness -->|呼叫 API| T2[Exercise DB API]
         Harness -->|呼叫 API| T3[Workout Log API]
@@ -70,7 +70,7 @@ sequenceDiagram
     participant User
     participant Harness
     participant LLM
-    participant API as Tools (DB)
+    participant API as Tools DB
 
     User->>Harness: 「我昨天練腿很痠。今天只有30分鐘，想練上半身。」
     Harness->>LLM: 傳送 User Input + System Prompt
